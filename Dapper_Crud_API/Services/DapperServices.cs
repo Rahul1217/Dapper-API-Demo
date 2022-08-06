@@ -2,6 +2,7 @@
 using Dapper_Crud_API.Interface;
 using Dapper_Crud_API.Model;
 using Dapper_Crud_API.Repository;
+using System.Data;
 
 namespace Dapper_Crud_API.Services
 {
@@ -56,7 +57,11 @@ namespace Dapper_Crud_API.Services
             {
                 string sQuery = "UPDATE [dbo].[tblDapper_Test] SET Name=@Name, Description=@Description, Status=@Status  WHERE Id=@id";
                 dbconnection.Open();
-                await dbconnection.QueryAsync(sQuery, dappertest); ;
+                await dbconnection.QueryAsync(sQuery, dappertest);
+
+                //string SP = "[dbo].[SP_Update]";
+                //var dapperData1 = await Task.FromResult(dbconnection.Query<User_RefreshToken>(SP, this.DapperTestParam(dappertest), commandType: CommandType.StoredProcedure).ToList());
+
             }
         }
 
@@ -65,7 +70,7 @@ namespace Dapper_Crud_API.Services
         {
             using (var dbconnection = CreateConnection())
             {
-                string sQuery = "INSERT INTO [dbo].[User_RefreshToken] (UserID, RefreshToken) VALUES(@UserID, @RefreshToken)";
+                string sQuery = "INSERT INTO [dbo].[User_RefreshToken] (UserID, RefreshToken) VALUES(@UserID, RefreshToken)";
                 dbconnection.Open();
                 await dbconnection.ExecuteAsync(sQuery, user_RefreshToken);
             }
@@ -78,6 +83,7 @@ namespace Dapper_Crud_API.Services
                 dbconnection.Open();
                 var dapperData = await dbconnection.QueryAsync<User_RefreshToken>(sQuery, new { UserID = userid });
                 return dapperData.FirstOrDefault();
+
             }
         }
         public async void Update(User_RefreshToken user_RefreshToken)
@@ -88,6 +94,20 @@ namespace Dapper_Crud_API.Services
                 dbconnection.Open();
                 await dbconnection.QueryAsync(sQuery, user_RefreshToken); ;
             }
+        }
+
+        private DynamicParameters DapperTestParam(Dapper_Test dapper_Test)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@Id", dapper_Test.Id);
+            dynamicParameters.Add("@Name", dapper_Test.Name);
+            dynamicParameters.Add("@Status", dapper_Test.Status);
+            dynamicParameters.Add("@DueDate", dapper_Test.DueDate);
+            dynamicParameters.Add("@Description", dapper_Test.Description);
+            dynamicParameters.Add("@DateModified", dapper_Test.DateModified);
+            dynamicParameters.Add("@CreatedDate", dapper_Test.CreatedDate);
+
+            return dynamicParameters;
         }
     }
 }
