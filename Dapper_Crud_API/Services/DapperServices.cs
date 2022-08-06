@@ -70,7 +70,7 @@ namespace Dapper_Crud_API.Services
         {
             using (var dbconnection = CreateConnection())
             {
-                string sQuery = "INSERT INTO [dbo].[User_RefreshToken] (UserID, RefreshToken) VALUES(@UserID, RefreshToken)";
+                string sQuery = "INSERT INTO [dbo].[User_RefreshToken] (UserID, RefreshToken) VALUES(@UserID, @RefreshToken)";
                 dbconnection.Open();
                 await dbconnection.ExecuteAsync(sQuery, user_RefreshToken);
             }
