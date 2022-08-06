@@ -1,5 +1,8 @@
 using Dapper_Crud_API.Interface;
 using Dapper_Crud_API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,26 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDapperServices, DapperServices>();
 
+builder.Services.AddAuthentication(Option =>
+{
+    Option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    Option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    Option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(Option =>
+{
+    Option.SaveToken = true;
+    Option.RequireHttpsMetadata = false;
+    Option.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = false,
+        ValidAudience = builder.Configuration["JWT:ValidAudience"],
+        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecurityKey"]))
+    };
+
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +46,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

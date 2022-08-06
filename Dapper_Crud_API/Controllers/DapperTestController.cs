@@ -1,17 +1,17 @@
 ﻿using Dapper_Crud_API.Interface;
 using Dapper_Crud_API.Model;
-using Dapper_Crud_API.Repository;
-using Dapper_Crud_API.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper_Crud_API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class DapperTestController : ControllerBase
     {
         private readonly IDapperServices dapperRepository;
+       
 
         public DapperTestController(IDapperServices dapperService)
         {
@@ -49,5 +49,7 @@ namespace Dapper_Crud_API.Controllers
         {
             dapperRepository.Delete(id);
         }
+
+        
     }
 }

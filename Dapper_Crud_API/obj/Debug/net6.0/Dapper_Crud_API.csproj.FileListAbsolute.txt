@@ -37,3 +37,11 @@ D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Should.dl
 D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Manectech\Projects\Dapper_Crud_API\Dapper_Crud_API\bin\Debug\net6.0\System.Security.Permissions.dll

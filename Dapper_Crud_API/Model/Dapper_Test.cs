@@ -14,4 +14,11 @@ namespace Dapper_Crud_API.Model
         public DateTime? CreatedDate { get; set; }
         public DateTime? DateModified { get; set; }
     }
+
+    public class Dapper_Login
+    {
+        public string UseiID { get; set; } = "";
+        public string Password { get; set; } = "";
+
+    }
 }
