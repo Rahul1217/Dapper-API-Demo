@@ -21,4 +21,9 @@ namespace Dapper_Crud_API.Model
         public string Password { get; set; } = "";
 
     }
+    public class RefreshCred
+    {
+        public string JWTToken { get; set; } = "";
+        public string RefreshToken { get; set; } = "";
+    }
 }

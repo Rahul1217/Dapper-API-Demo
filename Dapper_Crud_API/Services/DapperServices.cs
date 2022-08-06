@@ -59,5 +59,35 @@ namespace Dapper_Crud_API.Services
                 await dbconnection.QueryAsync(sQuery, dappertest); ;
             }
         }
+
+
+        public async void addRefToken(User_RefreshToken user_RefreshToken)
+        {
+            using (var dbconnection = CreateConnection())
+            {
+                string sQuery = "INSERT INTO [dbo].[User_RefreshToken] (UserID, RefreshToken) VALUES(@UserID, @RefreshToken)";
+                dbconnection.Open();
+                await dbconnection.ExecuteAsync(sQuery, user_RefreshToken);
+            }
+        }
+        public async Task<User_RefreshToken> GetTokenById(string userid)
+        {
+            using (var dbconnection = CreateConnection())
+            {
+                string sQuery = "SELECT UserID, RefreshToken FROM [dbo].[User_RefreshToken] WHERE UserID=@userid";
+                dbconnection.Open();
+                var dapperData = await dbconnection.QueryAsync<User_RefreshToken>(sQuery, new { UserID = userid });
+                return dapperData.FirstOrDefault();
+            }
+        }
+        public async void Update(User_RefreshToken user_RefreshToken)
+        {
+            using (var dbconnection = CreateConnection())
+            {
+                string sQuery = "UPDATE [dbo].[User_RefreshToken] SET RefreshToken=@RefreshToken  WHERE UserID=@UserID";
+                dbconnection.Open();
+                await dbconnection.QueryAsync(sQuery, user_RefreshToken); ;
+            }
+        }
     }
 }

@@ -5,7 +5,12 @@ VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapper_Crud_API", "Dapper_Crud_API\Dapper_Crud_API.csproj", "{3E003A71-4526-470A-B63B-69B93E9B7674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTest_Dapper_Crud_API", "XTest_Dapper_Crud_API\XTest_Dapper_Crud_API.csproj", "{55BAC70B-3C6C-44EA-9687-9467187A8365}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTest_Dapper_Crud_API", "XTest_Dapper_Crud_API\XTest_Dapper_Crud_API.csproj", "{55BAC70B-3C6C-44EA-9687-9467187A8365}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6DE8FFE9-8EB8-4139-B151-877793ED8EA8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

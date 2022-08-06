@@ -9,6 +9,9 @@ namespace Dapper_Crud_API.Interface
         Task<Dapper_Test> GetById(int id);
         void Delete(int id);
         void Update(Dapper_Test dappertest);
+        void addRefToken(User_RefreshToken user_RefreshToken);
+        Task<User_RefreshToken> GetTokenById(string userid);
+        void Update(User_RefreshToken user_RefreshToken);
 
     }
 }

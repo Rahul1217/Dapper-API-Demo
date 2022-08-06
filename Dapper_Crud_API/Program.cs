@@ -1,6 +1,8 @@
 using Dapper_Crud_API.Interface;
 using Dapper_Crud_API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -14,6 +16,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDapperServices, DapperServices>();
+builder.Services.AddScoped<IRefreshTokenGenrator, RefreshTokenGenrator>();
+builder.Services.AddScoped<IJwtToken, JwtToken>();
+builder.Services.AddScoped<ITokenRefresher, TokenRefresher>();
+builder.Services.AddScoped<IRefreshTokenGenrator, RefreshTokenGenrator>();
 
 builder.Services.AddAuthentication(Option =>
 {
@@ -34,6 +40,7 @@ builder.Services.AddAuthentication(Option =>
     };
 
 });
+//builder.Services.AddSingleton<IJwtToken>(x=>new JwtToken(x.GetService<IRefreshTokenGenrator>()));
 
 var app = builder.Build();
 
