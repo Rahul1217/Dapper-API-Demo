@@ -1,0 +1,7 @@
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.csproj.AssemblyReference.cache
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.AssemblyInfoInputs.cache
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.AssemblyInfo.cs
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.csproj.CoreCompileInputs.cache
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.MvcApplicationPartsAssemblyInfo.cs
+D:\ASP.NET Core\Dapper-API-Demo\Dapper_Crud_API\obj\Release\net6.0\Dapper_Crud_API.MvcApplicationPartsAssemblyInfo.cache

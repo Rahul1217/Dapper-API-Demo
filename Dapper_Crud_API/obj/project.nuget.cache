@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h3NX9yAkJv3VqLRgnY3DrrXzn9Q84vMIegZ9Z+4u1mvjeXy+XcRg+02XA/dTXwudw4CC+0ORW3l0G/2h6l0mgw==",
+  "dgSpecHash": "gNwG8eXCvqExrWPI4ED6eAvZNU1JBMcj5mLnhkuwQ4SWtYrBa+KVF7bhDIgGCxizpL/3AyKpUr8dRTOYDosDYQ==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET Core\\Dapper-API-Demo\\Dapper_Crud_API\\Dapper_Crud_API.csproj",
   "expectedPackageFiles": [
@@ -84,7 +84,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Should 1.1.20' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Should 1.1.20' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Should",
       "targetGraphs": [
         "net6.0"
