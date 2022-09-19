@@ -38,14 +38,14 @@ namespace Dapper_Crud_API.Services
                 throw new SecurityTokenException("Invalid Token Pass!");
             }
 
-            string username = pricipal.Identity.Name;
-            var refdata = dapperRepository.GetTokenById(username);
+            string? username = pricipal.Identity != null ? pricipal.Identity.Name : "";
+            var refdata = dapperRepository.GetTokenById((username != null ? username : ""));
 
             if (refdata.Result == null || refreshCred.RefreshToken != refdata.Result.RefreshToken)
             {
                 throw new SecurityTokenException("Invalid Token Pass!");
             }
-            return _jwtToken.Authenticate(username, pricipal.Claims.ToArray());
+            return _jwtToken.Authenticate((username != null ? username : ""), pricipal.Claims.ToArray());
         }
     }
 }
