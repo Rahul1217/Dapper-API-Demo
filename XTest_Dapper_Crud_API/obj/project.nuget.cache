@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PsBJKRHTIyMbHIlHx9B8Wpagoxd1/P8j5NWy1pHqwKneJDYAmZuGDY1WCIP1uRtZZ36TY1oYpbeU7NfYQkXPrg==",
+  "dgSpecHash": "LL+I3g1DVSc/Reub0VhuFCnQWDqDqaesMgscJnzuZuOXvHc8P774jy+CguXRbpH8xYN7He3ePESfBnTi23D9jA==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET Core\\Dapper-API-Demo\\XTest_Dapper_Crud_API\\XTest_Dapper_Crud_API.csproj",
   "expectedPackageFiles": [

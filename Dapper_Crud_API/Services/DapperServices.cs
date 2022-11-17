@@ -34,9 +34,12 @@ namespace Dapper_Crud_API.Services
         {
             using (var dbconnection = CreateConnection())
             {
-                string sQuery = "SELECT Id,Name, Description, Status, DueDate, CreatedDate, DateModified FROM [dbo].[tblDapper_Test] WHERE Id=@id";
                 dbconnection.Open();
-                var dapperData = await dbconnection.QueryAsync<Dapper_Test>(sQuery, new { Id = id });
+                //string sQuery = "SELECT Id,Name, Description, Status, DueDate, CreatedDate, DateModified FROM [dbo].[tblDapper_Test] WHERE Id=@id";
+                //var dapperData = await dbconnection.QueryAsync<Dapper_Test>(sQuery, new { Id = id });
+                string SP = "[dbo].[SP_Select_By_ID]";
+                var dapperData = await Task.FromResult(dbconnection.Query<Dapper_Test>(SP, this.DapperSelectParam(id), commandType: CommandType.StoredProcedure).ToList());
+
                 return dapperData.FirstOrDefault();
             }
         }
@@ -55,12 +58,13 @@ namespace Dapper_Crud_API.Services
         {
             using (var dbconnection = CreateConnection())
             {
-                string sQuery = "UPDATE [dbo].[tblDapper_Test] SET Name=@Name, Description=@Description, Status=@Status  WHERE Id=@id";
                 dbconnection.Open();
-                await dbconnection.QueryAsync(sQuery, dappertest);
+                //string sQuery = "UPDATE [dbo].[tblDapper_Test] SET Name=@Name, Description=@Description, Status=@Status  WHERE Id=@id";
+                //await dbconnection.QueryAsync(sQuery, dappertest);
 
-                //string SP = "[dbo].[SP_Update]";
-                //var dapperData1 = await Task.FromResult(dbconnection.Query<User_RefreshToken>(SP, this.DapperTestParam(dappertest), commandType: CommandType.StoredProcedure).ToList());
+                
+                string SP = "[dbo].[SP_Update]";
+                var dapperData1 = await Task.FromResult(dbconnection.Query<User_RefreshToken>(SP, this.DapperTestParam(dappertest), commandType: CommandType.StoredProcedure).ToList());
 
             }
         }
@@ -106,6 +110,19 @@ namespace Dapper_Crud_API.Services
             dynamicParameters.Add("@Description", dapper_Test.Description);
             dynamicParameters.Add("@DateModified", dapper_Test.DateModified);
             dynamicParameters.Add("@CreatedDate", dapper_Test.CreatedDate);
+
+            return dynamicParameters;
+        }
+        private DynamicParameters DapperSelectParam(Int64 Id)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@Id", Id);
+            //dynamicParameters.Add("@Name", dapper_Test.Name);
+            //dynamicParameters.Add("@Status", dapper_Test.Status);
+            //dynamicParameters.Add("@DueDate", dapper_Test.DueDate);
+            //dynamicParameters.Add("@Description", dapper_Test.Description);
+            //dynamicParameters.Add("@DateModified", dapper_Test.DateModified);
+            //dynamicParameters.Add("@CreatedDate", dapper_Test.CreatedDate);
 
             return dynamicParameters;
         }
