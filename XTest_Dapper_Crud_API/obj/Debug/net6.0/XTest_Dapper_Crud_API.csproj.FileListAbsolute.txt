@@ -256,3 +256,6 @@ D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\obj\Debug\net6.0\refint\XT
 D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\obj\Debug\net6.0\XTest_Dapper_Crud_API.pdb
 D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\obj\Debug\net6.0\XTest_Dapper_Crud_API.genruntimeconfig.cache
 D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\obj\Debug\net6.0\ref\XTest_Dapper_Crud_API.dll
+D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ASP.NET Core\Dapper-API-Demo\XTest_Dapper_Crud_API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
