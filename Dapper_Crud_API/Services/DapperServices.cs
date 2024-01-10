@@ -3,6 +3,7 @@ using Dapper_Crud_API.Interface;
 using Dapper_Crud_API.Model;
 using Dapper_Crud_API.Repository;
 using System.Data;
+using System.Reflection;
 
 namespace Dapper_Crud_API.Services
 {
@@ -62,7 +63,7 @@ namespace Dapper_Crud_API.Services
                 //string sQuery = "UPDATE [dbo].[tblDapper_Test] SET Name=@Name, Description=@Description, Status=@Status  WHERE Id=@id";
                 //await dbconnection.QueryAsync(sQuery, dappertest);
 
-                
+
                 string SP = "[dbo].[SP_Update]";
                 var dapperData1 = await Task.FromResult(dbconnection.Query<User_RefreshToken>(SP, this.DapperTestParam(dappertest), commandType: CommandType.StoredProcedure).ToList());
 
@@ -111,8 +112,21 @@ namespace Dapper_Crud_API.Services
             dynamicParameters.Add("@DateModified", dapper_Test.DateModified);
             dynamicParameters.Add("@CreatedDate", dapper_Test.CreatedDate);
 
+            //PropertyInfo[] propInfos = typeof(Dapper_Test).GetProperties();
+            //propInfos.ToList().ForEach(p =>
+            //    Console.WriteLine(string.Format("Property name: {0}", p.Name))
+            //    );
+
+
             return dynamicParameters;
         }
+        //public static object GetPropValue(object src, string propName = "")
+        //{
+        //    if (src != null)
+        //        return src.GetType().GetProperty(propName).GetValue(src, null);
+        //    else
+        //        return new object();
+        //}
         private DynamicParameters DapperSelectParam(Int64 Id)
         {
             DynamicParameters dynamicParameters = new DynamicParameters();
@@ -126,5 +140,6 @@ namespace Dapper_Crud_API.Services
 
             return dynamicParameters;
         }
+
     }
 }

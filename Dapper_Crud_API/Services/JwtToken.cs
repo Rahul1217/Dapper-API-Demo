@@ -28,7 +28,7 @@ namespace Dapper_Crud_API.Services
             var authsignkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecurityKey"]));
             var jwtsecuritytoken = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.Now.AddHours(5),
+                expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: new SigningCredentials(authsignkey, SecurityAlgorithms.HmacSha256)
                 );
             var reftoken = _refreshToken.GenrateToken();
@@ -68,7 +68,8 @@ namespace Dapper_Crud_API.Services
             var Token = new JwtSecurityToken(
                 issuer: _issuer.ToString(),
                 audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddHours(5),
+                //expires: DateTime.Now.AddDays(365),
+                expires: DateTime.Now.AddMinutes(1),
                 claims: authclaim,
                 signingCredentials: new SigningCredentials(authsignkey, SecurityAlgorithms.HmacSha256)
                 );

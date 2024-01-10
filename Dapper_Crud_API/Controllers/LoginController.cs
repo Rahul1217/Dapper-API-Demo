@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text;
 
@@ -46,6 +47,7 @@ namespace Dapper_Crud_API.Controllers
         public IActionResult refreshToken([FromBody] RefreshCred refreshCred)
         {
             var Token = _tokenRefresher.Refresh(refreshCred);
+            
             if (Token == null)
                 return Unauthorized();
 

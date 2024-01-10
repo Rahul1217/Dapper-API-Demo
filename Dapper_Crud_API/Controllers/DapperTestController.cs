@@ -25,6 +25,7 @@ namespace Dapper_Crud_API.Controllers
         }
 
         [HttpGet("{id}")]
+        //public async Task<Dapper_Test> Get([FromHeader(Name = "x-CustomHeader2")]  int id)
         public async Task<Dapper_Test> Get(int id)
         {
             return await dapperRepository.GetById(id);
